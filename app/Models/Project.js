@@ -28,7 +28,7 @@ export default class Value {
             <h5 class="card-header-text">${this.body}  </h5 >
           </div >
         <div class="project-card-body bg-white">
-          <img onclick="app.mainController.changePicture(event, ${this.id})" id="${this.id}" src="../assets/img/${this.images[this.displayedImage]}" alt="" class="d-flex project-img img-fluid">
+          <img onclick="app.mainController.changePicture(event, ${this.id})" id="${this.id}" src="./assets/img/${this.images[this.displayedImage]}" alt="" class="d-flex project-img img-fluid">
           <div class="row caret-row" id="caret-row">
             <i class="fa fa-caret-left img-carat" aria-hidden="true"></i>
             <i class="fa fa-caret-right img-carat" aria-hidden="true"></i>
