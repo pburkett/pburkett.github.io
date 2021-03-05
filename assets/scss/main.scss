@@ -1,0 +1,122 @@
+@import "./_variables.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "./_overrides.scss";
+@import "./custom.scss";
+@import "./loaders.scss";
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $body-bg;
+}
+
+main {
+  flex-grow: 1;
+}
+.ww-tree{
+  background:linear-gradient($dark-xtr, $dark-tr), url('../img/weepwillow.jpg') center no-repeat;
+  background-size:cover ;
+  height: 120vh;
+  width: 100%;
+}
+.my-name{
+  font-weight: 500;
+  font-size: 3rem;
+ font-family: 'Cormorant Garamond', serif !important;
+ filter: drop-shadow(1px 1px 5px $white-tr);
+}
+.headline{
+  font-weight: 600;
+}
+h1, h2, h3, h4, h5, h6{
+ font-family: 'Cormorant Garamond', serif !important;
+}
+.tech-card {
+  width: 800px !important;
+  transform: translateY(-100px);
+  box-shadow: 0 4px 10px $dark-tr;
+}
+.tech-img {
+  height: 100px;
+  filter: drop-shadow(0 4px 6px $dark-tr);
+}
+.tech-img-sm{
+  filter: drop-shadow(0 4px 2px $dark-tr);
+  height: 60px;
+
+}
+.rounded-2{
+  border-radius: 10px;
+}
+.no-wrap{
+  flex-wrap: nowrap !important;
+}
+.project-card{
+  flex-direction: column;
+  width: 275px;
+  height: 450px;
+}
+.card-header{
+  height: 38%;
+}
+.project-card-body {
+  height: 62%;
+}
+.project-img{
+  height: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+      transition:  all .6s ease-out;
+
+  justify-self: end !important;
+
+}
+.project-img:hover{
+  cursor: pointer;
+  z-index: 2;
+  transform: translateX(-25%) scale(1.15);
+  max-width: 1000px !important;
+  transition:  all .6s ease-out;
+  box-shadow: 0px 3px 15px $dark;
+  & + #caret-row {
+  margin: 0px !important;
+    opacity: 1;
+  transform: translateX(-25%) translateX(-25.58px) !important;
+  width: 659.94px !important;
+};
+}
+.force-img-hover-fx{
+  cursor: pointer;
+  z-index: 2;
+  transform: translateX(-25%) scale(1.15);
+  max-width: 1000px !important;
+  transition:  all .6s ease-out;
+  box-shadow: 0px 3px 15px $dark;
+  & + #caret-row {
+  margin: 0px !important;
+    opacity: 1;
+  transform: translateX(-25%) translateX(-25.58px) !important;
+  width: 659.94px !important;
+};
+}
+.img-carat{
+  font-size: 5rem !important;
+}
+
+.caret-row{
+  opacity: 0;
+  transition: all .8s ease-out;
+  margin: 0px !important;
+  height: 0px;
+  width: 275px;
+  pointer-events: none;
+  bottom: 75%;
+  position: relative  ;
+  justify-content: space-between;
+}
+
+.wrap-on{
+  flex-basis: 100%;
+}
