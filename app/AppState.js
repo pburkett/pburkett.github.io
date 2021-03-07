@@ -4,7 +4,13 @@ import { isValidProp } from "./Utils/isValidProp.js"
 
 class AppState extends EventEmitter {
   projects = [new Project({
-    name: 'Keepr', body: 'Empower users to engage through imagery, and Vaults of their favorites.', id: 0, images: ['keepr.png', 'keepr-modal.png']
+    name: 'Keepr'
+    , body: 'Empower users to engage through Keeps and Vaults of their favorite keeps ',
+    id: 0,
+    siteLink: 'https://curbsyde.herokuapp.com/',
+    gitHubLink: 'https://github.com/pburkett/curb-side-fork',
+    images: ['keepr.png', 'keepr-modal.png'],
+    techs: ['Vue', 'C#', 'DotNet', 'Auth0']
   })]
 }
 

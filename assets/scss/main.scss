@@ -56,22 +56,82 @@ h1, h2, h3, h4, h5, h6{
   flex-direction: column;
   width: 275px;
   height: 450px;
+  box-shadow: 0px 6px 12px $dark-tr;
 }
+
 .card-header{
   height: 38%;
 }
 .project-card-body {
   height: 62%;
 }
+@keyframes slideInFromLeft {
+  from {
+  transform: translateX(-25%) translateX(-100px) scale(1.15);
+    opacity: 0;
+  }
+  to {
+  transform: translateX(-25%) scale(1.15);
+    opacity: 1;
+
+  }
+}
+@keyframes slideInFromRight {
+  from {
+  transform: translateX(-25%) translateX(100px) scale(1.15);
+    opacity: 0;
+  }
+  to {
+  transform: translateX(-25%) scale(1.15);
+    opacity: 1;
+  }
+}
+@keyframes fadeIn{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in{
+  animation-name: fadeIn;
+  animation-duration: .8s;
+}
+
+.slide-in-from-left{
+  animation-duration: .5s;
+  animation-name: slideInFromLeft;
+}
+.slide-in-from-right{
+  animation-duration: .5s;
+  animation-name: slideInFromRight;
+}
+.slide-out-to-left{
+  transform: translateX(-25%) translateX(-100px) scale(1.15) !important;
+  opacity: 0;
+  transition: all .3s !important;
+  & + #caret-row {
+      opacity: 0 !important;
+      transition: all .3s ease-in !important;
+    }
+}
+.slide-out-to-right{
+  transform: translateX(-25%) translateX(100px) scale(1.15) !important;
+  opacity: 0;
+  transition: all .3s ease-in !important;
+    & + #caret-row {
+      opacity: 0 !important;
+      transition: all .5s ease-in !important;
+    }
+}
 .project-img{
   height: 100%;
   min-width: 100%;
   max-width: 100%;
   object-fit: cover;
-      transition:  all .6s ease-out;
-
+  transition:  all .6s ease-out;
   justify-self: end !important;
-
 }
 .project-img:hover{
   cursor: pointer;
@@ -85,7 +145,7 @@ h1, h2, h3, h4, h5, h6{
     opacity: 1;
   transform: translateX(-25%) translateX(-25.58px) !important;
   width: 659.94px !important;
-};
+  };
 }
 .force-img-hover-fx{
   cursor: pointer;
@@ -94,13 +154,17 @@ h1, h2, h3, h4, h5, h6{
   max-width: 1000px !important;
   transition:  all .6s ease-out;
   box-shadow: 0px 3px 15px $dark;
+
   & + #caret-row {
-  margin: 0px !important;
+    margin: 0px !important;
     opacity: 1;
-  transform: translateX(-25%) translateX(-25.58px) !important;
-  width: 659.94px !important;
+    transform: translateX(-25%) translateX(-25.58px) !important;
+    width: 659.94px !important;
 };
 }
+
+
+        
 .img-carat{
   font-size: 5rem !important;
 }
@@ -119,4 +183,28 @@ h1, h2, h3, h4, h5, h6{
 
 .wrap-on{
   flex-basis: 100%;
+}
+.w-fc{
+  width: fit-content;
+}
+.link-div{
+  background: $dark;
+  border-radius: 10px;
+}
+.c-pointer{
+  cursor: pointer;
+}
+.last-card-btm-row{
+  position: absolute;
+  bottom: 10px;
+}
+.f-10{
+  font-size: 10pt !important;
+}
+.img-caret-sm{
+  font-size: 3rem !important;
+}
+.logo-sm{
+  width: 24px;
+  height: 24px;
 }
