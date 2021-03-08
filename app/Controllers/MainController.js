@@ -7,7 +7,13 @@ function _drawProjects() {
   ProxyState.projects.forEach(p => template += p.Template)
   target.innerHTML = template
   console.log('draw complete');
+  setTimeout(() => {
+    let endCards = document.getElementsByClassName(`end-card`)
+    for (let ind = 0; ind < endCards.length; ind++) {
 
+      endCards[ind].classList.remove('fade-in')
+    }
+  }, 500);
 
 }
 
@@ -16,10 +22,21 @@ export default class MainController {
   constructor() {
     ProxyState.on('projects', _drawProjects)
     _drawProjects()
+    this.preload()
 
   }
 
-  changePicture(e, id) {
+  preload() {
+    ProxyState.projects.forEach(p => {
+
+      $(p.images).each(function () {
+        $('<img/>')[0].src = this;
+        // Alternatively you could use:
+        // (new Image()).src = this;
+      });
+    })
+  }
+  changePicture(e = {}, id) {
     let elem = ProxyState.projects.find(p => p.id === id)
     let oldImg = document.getElementById(id)
     let carets = document.getElementById('caret-row')
@@ -36,7 +53,6 @@ export default class MainController {
       oldImg.classList.add(`slide-out-to-left`)
       carets.classList.add('fade-caret')
       if (elem.changePicture(1)) {
-
         return
       }
       console.log('hey');
@@ -48,14 +64,15 @@ export default class MainController {
       newImg.classList.add('force-img-hover-fx')
       newImg.addEventListener("mouseleave", function (event) {
         newImg.classList.remove('force-img-hover-fx')
-
       })
       e.stopPropagation()
     }, 500);
   }
+
   returnToImgs(id) {
     let elem = ProxyState.projects.find(p => p.id === id)
     elem.displayedImage = 0
+    elem.displayEndCard = false
     ProxyState.projects = ProxyState.projects
 
   }
