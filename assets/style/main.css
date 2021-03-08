@@ -10929,4 +10929,13 @@ a {
   visibility: hidden;
 }
 
+#apps-header {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.apps-header-div {
+  box-shadow: 0px 4px 12px rgba(61, 73, 85, 0.6);
+}
+
 /*# sourceMappingURL=main.css.map */
