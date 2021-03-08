@@ -38,7 +38,7 @@ export default class Value {
           <i class="fa fa-caret-left c-pointer img-caret-sm" onclick="app.mainController.returnToImgs(${this.id})" aria-hidden="true"></i>
           <i class="f-10 mx-3">Return to gallery</i>
         </div>
-      </div >
+      </div>
         `
       setTimeout(() => {
 
@@ -61,7 +61,7 @@ export default class Value {
             <h2 class="card-header-title">Keepr</h2>
             <h5 class="card-header-text">${this.body}  </h5 >
           </div >
-        <div class="project-card-body bg-white" id="project-card-body-${this.id}">
+        <div class="project-card-body bg-white align-items-center h-fc" id="project-card-body-${this.id}">
         ${this.displayEndCard ? ` <div id="${this.id}" class="end-card bg-white pt-3 px-2 col-12 h-100">
         
         <h5 class="ml-3">Built with:<h5>

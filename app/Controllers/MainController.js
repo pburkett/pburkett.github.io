@@ -37,6 +37,7 @@ export default class MainController {
     })
   }
   changePicture(e = {}, id) {
+    var x = window.matchMedia("(max-width: 700px)")
     let elem = ProxyState.projects.find(p => p.id === id)
     let oldImg = document.getElementById(id)
     let carets = document.getElementById('caret-row')
@@ -61,10 +62,14 @@ export default class MainController {
       ProxyState.projects = ProxyState.projects
       let newImg = document.getElementById(id)
       newImg.classList.add(`slide-in-from-${dir}`)
-      newImg.classList.add('force-img-hover-fx')
-      newImg.addEventListener("mouseleave", function (event) {
-        newImg.classList.remove('force-img-hover-fx')
-      })
+      if (!x.matches) {
+        console.log('hey');
+        newImg.classList.add('force-img-hover-fx')
+
+        newImg.addEventListener("mouseleave", function (event) {
+          newImg.classList.remove('force-img-hover-fx')
+        })
+      }
       e.stopPropagation()
     }, 500);
   }
