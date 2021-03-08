@@ -40,7 +40,10 @@ export default class Value {
         </div>
       </div >
         `
-      document.getElementById(`project-card-body-${this.id}`).innerHTML = template
+      setTimeout(() => {
+
+        document.getElementById(`project-card-body-${this.id}`).innerHTML = template
+      }, 500);
       setTimeout(() => {
         document.getElementById(`project-card-body-${this.id}`).classList.remove('fade-in')
       }, 500);
