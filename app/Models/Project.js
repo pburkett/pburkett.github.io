@@ -58,7 +58,7 @@ export default class Value {
     return /*html*/`
         <div class="project-card mx-5 my-5">
           <div class="card-header text-center text-white bg-dark">
-            <h2 class="card-header-title">Keepr</h2>
+            <h2 class="card-header-title">${this.name}</h2>
             <h5 class="card-header-text">${this.body}  </h5 >
           </div >
         <div class="project-card-body bg-white align-items-center h-fc" id="project-card-body-${this.id}">
