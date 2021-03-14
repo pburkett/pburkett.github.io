@@ -10,7 +10,7 @@ class AppState extends EventEmitter {
     siteLink: 'https://curbsyde.herokuapp.com/',
     gitHubLink: 'https://github.com/pburkett/Keepr',
     images: ['./assets/img/keepr.png', './assets/img/keepr-modal.png'],
-    techs: ['Vue', 'C#', 'DotNet', 'AuthO', 'Figma']
+    techs: ['Vue', 'C#', 'DotNet', 'AuthO']
   }), new Project({
     name: 'Curbsyde'
     , body: 'Facilitate curbside pickup, online ordering, and customer service through a web application. ',
@@ -18,7 +18,7 @@ class AppState extends EventEmitter {
     siteLink: 'https://curbsyde.herokuapp.com/#/',
     gitHubLink: 'https://github.com/pburkett/curb-side-fork',
     images: ['./assets/img/activeorders.png', './assets/img/checkout.png'],
-    techs: ['Vue', 'Express.js', 'Socket.io', 'AuthO']
+    techs: ['Vue', 'Express.js', 'Socket.io', 'AuthO', 'Figma']
   }), new Project({
     name: 'Formulator'
     , body: 'Expedite daily recipe calculations for commercial bakeries.',
